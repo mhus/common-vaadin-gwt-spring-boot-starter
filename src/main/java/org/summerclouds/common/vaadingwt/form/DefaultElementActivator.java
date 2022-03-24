@@ -17,7 +17,7 @@ public class DefaultElementActivator implements ElementActivator {
 	@Override
 	public XLayElement createObject(String name) {
 		try {
-			return register.get(name).getConstructor().newInstance();
+			return (XLayElement) register.get(name).getConstructor().newInstance();
 		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
 				| NoSuchMethodException | SecurityException e) {
 			// TODO Auto-generated catch block
